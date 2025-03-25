@@ -22,45 +22,6 @@ public class ParkingSlotManager {
         this.parkingHistories = parkingHistories;
     }
 
-    public void showMenu() {
-        while (true) {
-            System.out.println("[1] Lihat Slot Parkir");
-            System.out.println("[2] Tambah Slot Parkir");
-            System.out.println("[3] Edit Slot Parkir");
-            System.out.println("[4] Hapus Slot Parkir");
-            System.out.println("[5] Konfirmasi Kedatangan Pengunjung");
-            System.out.println("[6] Bebaskan Slot Parkir");
-            System.out.println("[0] Kembali ke menu awal");
-
-            System.out.print("Pilih menu: ");
-
-            int choice = scanner.nextInt();
-
-            switch (choice) {
-                case 1:
-                    showParkingSlots();
-                    break;
-                case 2:
-                    addParkingSlot();
-                    break;
-                case 3:
-                    editParkingSlot();
-                    break;
-                case 4:
-                    deleteParkingSlot();
-                    break;
-                case 5:
-                    confirmVisitorArrival();
-                    break;
-                case 6:
-                    releaseParkingSlot();
-                    break;
-                case 0:
-                    return;
-            }
-        }
-    }
-
     public void showParkingSlots() {
         System.out.println("Slot Parkir:");
         for (ParkingSlot parkingSlot : parkingSlots) {

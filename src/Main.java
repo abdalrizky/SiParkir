@@ -1,10 +1,12 @@
 import manager.BookingManager;
 import manager.ParkingSlotManager;
+import menu.OperatorMenu;
+import menu.VisitorMenu;
 import model.ParkingHistory;
 import model.ParkingSlot;
 import model.Reservation;
 import utils.DummyData;
-import utils.MainMenu;
+import menu.MainMenu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -20,7 +22,10 @@ public class Main {
         ParkingSlotManager parkingSlotManager = new ParkingSlotManager(scanner, parkingSlots, reservations, parkingHistories);
         BookingManager bookingManager = new BookingManager(scanner, parkingSlotManager);
 
-        MainMenu menu = new MainMenu(scanner, parkingSlotManager, bookingManager);
+        OperatorMenu operatorMenu = new OperatorMenu(scanner, parkingSlotManager);
+        VisitorMenu visitorMenu = new VisitorMenu(scanner, parkingSlotManager, bookingManager);
+
+        MainMenu menu = new MainMenu(scanner, operatorMenu, visitorMenu);
         menu.show();
     }
 }

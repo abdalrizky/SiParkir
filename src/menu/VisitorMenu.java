@@ -1,18 +1,17 @@
-package utils;
+package menu;
 
 import manager.BookingManager;
 import manager.ParkingSlotManager;
 
 import java.util.Scanner;
 
-
-public class MainMenu {
+public class VisitorMenu {
 
     private final Scanner scanner;
     private final ParkingSlotManager parkingSlotManager;
     private final BookingManager bookingManager;
 
-    public MainMenu(Scanner scanner, ParkingSlotManager parkingSlotManager, BookingManager bookingManager) {
+    public VisitorMenu(Scanner scanner, ParkingSlotManager parkingSlotManager, BookingManager bookingManager) {
         this.scanner = scanner;
         this.parkingSlotManager = parkingSlotManager;
         this.bookingManager = bookingManager;
@@ -20,10 +19,9 @@ public class MainMenu {
 
     public void show() {
         while (true) {
-            System.out.println("Pilih Role:");
-            System.out.println("-- [1] Operator");
-            System.out.println("-- [2] Pengunjung");
-            System.out.println("[0] Keluar dari program");
+            System.out.println("[1] Lihat Slot Parkir");
+            System.out.println("[2] Reservasi Slot Parkir");
+            System.out.println("[0] Kembali ke menu awal");
 
             System.out.print("Pilih menu: ");
 
@@ -31,12 +29,12 @@ public class MainMenu {
 
             switch (choice) {
                 case 1:
-                    parkingSlotManager.showMenu();
+                    parkingSlotManager.showParkingSlots();
                     break;
                 case 2:
-                    bookingManager.showMenu();
+                    bookingManager.reserveParkingSlot();
                     break;
-                default:
+                case 0:
                     return;
             }
         }

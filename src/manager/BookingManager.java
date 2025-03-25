@@ -12,29 +12,6 @@ public class BookingManager {
         this.parkingSlotManager = parkingSlotManager;
     }
 
-    public void showMenu() {
-        while (true) {
-            System.out.println("[1] Lihat Slot Parkir");
-            System.out.println("[2] Reservasi Slot Parkir");
-            System.out.println("[0] Kembali ke menu awal");
-
-            System.out.print("Pilih menu: ");
-
-            int choice = scanner.nextInt();
-
-            switch (choice) {
-                case 1:
-                    parkingSlotManager.showParkingSlots();
-                    break;
-                case 2:
-                    reserveParkingSlot();
-                    break;
-                case 0:
-                    return;
-            }
-        }
-    }
-
     public void reserveParkingSlot() {
         parkingSlotManager.showParkingSlots();
 
