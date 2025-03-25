@@ -16,7 +16,7 @@ public class BookingManager {
         parkingSlotManager.showParkingSlots();
 
         System.out.print("Masukkan ID Slot Parkir: ");
-        String parkingSlotId = scanner.next();
+        String parkingSlotId = scanner.nextLine();
 
         // Masih data dummy
         String visitorId = "0001";

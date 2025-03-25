@@ -35,9 +35,9 @@ public class ParkingSlotManager {
 
     public void addParkingSlot() {
         System.out.print("Nama: ");
-        String name = scanner.next();
+        String name = scanner.nextLine();
         System.out.print("Tipe: ");
-        String type = scanner.next();
+        String type = scanner.nextLine();
 
         parkingSlots.add(new ParkingSlot(name, type, Status.AVAILABLE));
         System.out.println("Slot parkir berhasil ditambahkan");
@@ -45,7 +45,7 @@ public class ParkingSlotManager {
 
     public void editParkingSlot() {
         System.out.print("ID: ");
-        String id = scanner.next();
+        String id = scanner.nextLine();
 
         ParkingSlot parkingSlot = parkingSlots.stream()
             .filter(slot -> slot.getId().equals(id))
@@ -58,9 +58,9 @@ public class ParkingSlotManager {
         }
 
         System.out.print("Nama: ");
-        String name = scanner.next();
+        String name = scanner.nextLine();
         System.out.print("Tipe: ");
-        String type = scanner.next();
+        String type = scanner.nextLine();
 
         parkingSlot.setName(name);
         parkingSlot.setType(type);
@@ -70,7 +70,7 @@ public class ParkingSlotManager {
 
     public void deleteParkingSlot() {
         System.out.print("ID: ");
-        String id = scanner.next();
+        String id = scanner.nextLine();
 
         ParkingSlot parkingSlot = parkingSlots.stream()
             .filter(slot -> slot.getId().equals(id))
@@ -90,7 +90,7 @@ public class ParkingSlotManager {
     // Proses pada beberapa fungsi di bawah belum sepenuhnya selesai, jadi mohon diabaikan saja
     public void confirmVisitorArrival() {
         System.out.print("ID Slot Parkir: ");
-        String id = scanner.next();
+        String id = scanner.nextLine();
 
         ParkingSlot parkingSlot = parkingSlots.stream()
             .filter(slot -> slot.getId().equals(id))
@@ -143,7 +143,7 @@ public class ParkingSlotManager {
     public void releaseParkingSlot() {
 
         System.out.print("ID Slot Parkir: ");
-        String id = scanner.next();
+        String id = scanner.nextLine();
 
         ParkingSlot parkingSlot = parkingSlots.stream()
             .filter(slot -> slot.getId().equals(id))
