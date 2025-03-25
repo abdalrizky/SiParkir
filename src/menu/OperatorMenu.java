@@ -27,6 +27,7 @@ public class OperatorMenu {
             System.out.print("Pilih menu: ");
 
             int choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
