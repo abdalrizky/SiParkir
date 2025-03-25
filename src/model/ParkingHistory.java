@@ -1,4 +1,4 @@
-package models;
+package model;
 
 public class ParkingHistory {
     private final String id;

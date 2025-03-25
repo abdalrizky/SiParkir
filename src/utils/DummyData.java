@@ -1,7 +1,7 @@
 package utils;
 
-import models.ParkingSlot;
-import models.Status;
+import model.ParkingSlot;
+import model.Status;
 
 import java.util.ArrayList;
 

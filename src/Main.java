@@ -1,8 +1,8 @@
-import managers.BookingManager;
-import managers.ParkingSlotManager;
-import models.ParkingHistory;
-import models.ParkingSlot;
-import models.Reservation;
+import manager.BookingManager;
+import manager.ParkingSlotManager;
+import model.ParkingHistory;
+import model.ParkingSlot;
+import model.Reservation;
 import utils.DummyData;
 import utils.MainMenu;
 

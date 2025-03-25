@@ -1,7 +1,7 @@
 package utils;
 
-import managers.BookingManager;
-import managers.ParkingSlotManager;
+import manager.BookingManager;
+import manager.ParkingSlotManager;
 
 import java.util.Scanner;
 

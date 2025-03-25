@@ -1,9 +1,9 @@
-package managers;
+package manager;
 
-import models.ParkingHistory;
-import models.ParkingSlot;
-import models.Reservation;
-import models.Status;
+import model.ParkingHistory;
+import model.ParkingSlot;
+import model.Reservation;
+import model.Status;
 
 import java.util.ArrayList;
 import java.util.Scanner;

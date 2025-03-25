@@ -1,4 +1,4 @@
-package models;
+package model;
 
 public class Reservation {
     private final String id;

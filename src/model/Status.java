@@ -1,4 +1,4 @@
-package models;
+package model;
 
 // Menunjukkan status dari ParkingSlot
 public enum Status {
