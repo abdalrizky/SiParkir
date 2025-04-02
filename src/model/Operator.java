@@ -2,29 +2,14 @@ package model;
 
 import java.util.UUID;
 
-public class Operator {
-    private final String id;
-    private String name;
-
+public class Operator extends User {
     public Operator(String name) {
-        this.id = generateId();
-        this.name = name;
+        super(name);
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    private String generateId() {
+    @Override
+    protected String generateId() {
         String uuid = UUID.randomUUID().toString().replace("-", "");
-        return uuid.substring(0, 10);
+        return "o" + uuid.substring(0, 4);
     }
 }

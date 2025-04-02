@@ -2,25 +2,14 @@ package model;
 
 import java.util.UUID;
 
-public class Visitor {
-    private final String id;
-    private String name;
+public class Visitor extends User {
     private String phoneNumber;
     private String licenceNumber;
 
     public Visitor(String name, String phoneNumber, String licenceNumber) {
-        this.id = generateId();
-        this.name = name;
+        super(name);
         this.phoneNumber = phoneNumber;
         this.licenceNumber = licenceNumber;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public String getName() {
-        return name;
     }
 
     public String getPhoneNumber() {
@@ -31,10 +20,6 @@ public class Visitor {
         return licenceNumber;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
@@ -43,8 +28,9 @@ public class Visitor {
         this.licenceNumber = licenceNumber;
     }
 
-    private String generateId() {
+    @Override
+    protected String generateId() {
         String uuid = UUID.randomUUID().toString().replace("-", "");
-        return uuid.substring(0, 5);
+        return "v" + uuid.substring(0, 4);
     }
 }
