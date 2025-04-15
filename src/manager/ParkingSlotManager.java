@@ -33,6 +33,42 @@ public class ParkingSlotManager {
         }
     }
 
+    public void showParkingSlots(String type) {
+        ParkingSlot parkingSlotsFiltered = parkingSlots.stream().filter(slot -> slot.getType().equalsIgnoreCase(type)).findFirst().orElse(null);
+        if (parkingSlotsFiltered != null) {
+            System.out.println("Slot Parkir:");
+            for (ParkingSlot parkingSlot : parkingSlots) {
+                if (parkingSlot.getType().equalsIgnoreCase(type)) {
+                    System.out.println("ID: " + parkingSlot.getId());
+                    System.out.println("Nama: " + parkingSlot.getName());
+                    System.out.println("Tipe: " + parkingSlot.getType());
+                    System.out.println("Status: " + parkingSlot.getStatus());
+                    System.out.println();
+                }
+            }
+        } else {
+            System.out.println("Tidak ada slot parkir yang sesuai");
+        }
+
+    }
+
+    public void showParkingSlots(String type, Status status) {
+        ParkingSlot parkingSlotsFiltered = parkingSlots.stream().filter(slot -> slot.getType().equalsIgnoreCase(type) && slot.getStatus() == status).findFirst().orElse(null);
+        if (parkingSlotsFiltered != null) {
+            System.out.println("Slot Parkir:");
+            for (ParkingSlot parkingSlot : parkingSlots) {
+                if (parkingSlot.getType().equalsIgnoreCase(type) && parkingSlot.getStatus() == status) {
+                    System.out.println("Nama: " + parkingSlot.getName());
+                    System.out.println("Tipe: " + parkingSlot.getType());
+                    System.out.println("Status: " + parkingSlot.getStatus());
+                    System.out.println();
+                }
+            }
+        } else {
+            System.out.println("Tidak ada slot parkir yang sesuai");
+        }
+    }
+
     public void addParkingSlot() {
         System.out.print("Nama: ");
         String name = scanner.nextLine();

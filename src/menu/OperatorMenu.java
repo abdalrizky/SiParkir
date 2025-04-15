@@ -1,6 +1,7 @@
 package menu;
 
 import manager.ParkingSlotManager;
+import model.Status;
 
 import java.util.Scanner;
 
@@ -31,7 +32,7 @@ public class OperatorMenu {
 
             switch (choice) {
                 case 1:
-                    parkingSlotManager.showParkingSlots();
+                    showParkingSlotMenu();
                     break;
                 case 2:
                     parkingSlotManager.addParkingSlot();
@@ -47,6 +48,51 @@ public class OperatorMenu {
                     break;
                 case 6:
                     parkingSlotManager.releaseParkingSlot();
+                    break;
+                case 0:
+                    return;
+            }
+        }
+    }
+
+    private void showParkingSlotMenu() {
+        while (true) {
+            System.out.println("[1] Lihat Semua Slot Parkir");
+            System.out.println("[2] Lihat Slot Parkir Berdasarkan Tipe");
+            System.out.println("[3] Lihat Slot Parkir Berdasarkan Status");
+            System.out.println("[0] Kembali");
+
+            System.out.print("Pilih menu: ");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    parkingSlotManager.showParkingSlots();
+                    break;
+                case 2:
+                    System.out.print("Masukkan tipe slot parkir: ");
+                    String type = scanner.nextLine();
+                    parkingSlotManager.showParkingSlots(type);
+                    break;
+                case 3:
+                    System.out.println("Pilih status slot parkir:");
+
+                    for (Status status : Status.values()) {
+                        System.out.println("[" + status.ordinal() + "] " + status);
+                    }
+
+                    System.out.print("Pilih status: ");
+                    int statusChoice = scanner.nextInt();
+                    scanner.nextLine();
+
+                    if (statusChoice >= 0 && statusChoice < Status.values().length) {
+                        Status status = Status.values()[statusChoice];
+                        parkingSlotManager.showParkingSlots(null, status);
+                    } else {
+                        System.out.println("Status tidak valid.");
+                    }
                     break;
                 case 0:
                     return;
